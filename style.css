@@ -1,0 +1,514 @@
+@font-face {
+  font-family: regular;
+  src: url(/WFVisualSans-RegularText-46461986901f80620e484e70aa8cbb90ede25a01351d464819a4e47a3f38ea43.woff2);
+}
+@font-face {
+  font-family: semibold;
+  src: url(/WFVisualSans-SemiBold-aa0e55353b6a1b897f76a0fcbf5561fa243ce1b8b9f6aebcb5a186f0536713b1.woff2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: regular;
+}
+:root {
+  --green: green;
+  --skyBlue: skyblue;
+  --four: #a0e9ff;
+  /* --sec: #cbf1f5; */
+  --sup: #29bbff;
+  --pri: #22ecff;
+  /* --pri: rgb(42, 209, 255); */
+  /* --sup: #71c9ce; */
+  /* --sup:rgb(245, 176, 74); */
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: var(--pri);
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden;
+}
+nav{
+  background-color: var(--four);
+  width: 100%;
+  height: 80px;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  font-size: 1.5rem;
+  border: 1px solid black;
+}
+header {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  background-color: var(--sup);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(https://www.weathercompany.com/wp-content/uploads/2024/01/AdobeStock_359999296-sized.jpg);
+  background-size:cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.header1{
+  font-size: 2rem;
+}
+.header2{
+  font-size: 1.5rem;
+}
+
+
+
+section.cards {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  gap: 20px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.elem {
+  width: 250px;
+  height: 350px;
+  background-color: var(--sup);
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.elem:active {
+  scale: 0.9;
+}
+.elem img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+}
+.elem h1 {
+  font-family: semibold;
+  position: absolute;
+  bottom: 5%;
+  right: 15%;
+  color: var(--sup);
+}
+
+.fullelem {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: var(--pri);
+  overflow: hidden;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: rgb(242, 28, 63);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.taskcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  height: 80%;
+  gap: 20px;
+}
+.todo-list {
+  padding: 30px;
+}
+.todo-list h1 {
+  font-size: 3rem;
+}
+.uppertask {
+  margin-bottom: 40px;
+}
+.addtask {
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: var(--sup);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 20px;
+  gap: 40px;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  border-radius: 20px 0 0 20px;
+}
+.addtask #input {
+  width: 100%;
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: var(--pri);
+  border: none;
+}
+.addtask textarea {
+  width: 100%;
+  height: 300px;
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: var(--pri);
+  resize: none;
+}
+.addtask button {
+  width: 100%;
+  padding: 10px 30px;
+  font-size: 20px;
+  background-color: var(--pri);
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+.checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.checkbox #checkbox {
+  scale: 2;
+  margin-left: 7px;
+}
+
+.addtask button:active {
+  scale: 0.9;
+}
+
+.alltasks {
+  height: 100%;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  background-color: var(--sup);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  border-radius: 0 20px 20px 0;
+  overflow: auto;
+}
+.alltasks::-webkit-scrollbar {
+  display: none;
+}
+.task {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px;
+
+  background-color: var(--sec);
+  font-size: 1.5rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.task button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  background-color: rgb(0, 205, 0);
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.task button:active {
+  scale: 0.9;
+}
+.daily-planner {
+  padding: 40px;
+}
+
+.planner::-webkit-scrollbar {
+  display: none;
+}
+
+.daily-planner .planner {
+  width: 100%;
+  height: 90%;
+  background-color: var(--sup);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 30px;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  overflow: auto;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-radius: 30px;
+}
+
+.plantask {
+  width: 40%;
+  position: relative;
+}
+
+.planner input {
+  width: 100%;
+  height: 50px;
+  background-color: var(--pri);
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.planner p {
+  position: absolute;
+  top: 0;
+  left: 1%;
+  font-size: 15px;
+}
+.motivation {
+  width: 100%;
+  height: 100%;
+}
+
+.allquotes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* flex-direction: column; */
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  width: 100%;
+
+  background-color: var(--pri);
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.quotes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  padding: 20px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 900px;
+  height: 400px;
+  background-color: rgb(80, 221, 253);
+  position: relative;
+  border-radius: 20px;
+}
+
+.mainquote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  /* backdrop-filter: blur(20px); */
+  font-size: 3rem;
+  font-weight: 600;
+  height: 200px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.author {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  font-weight: 600;
+  font-size: 2rem;
+  background-color: rgb(255, 168, 75);
+}
+
+.motivation .uppertask h2 {
+  font-size: 3rem;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: start;
+  font-family: regular;
+}
+.pomo {
+  padding: 40px;
+}
+
+.pomodoro {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 4rem;
+  width: 400px;
+  height: 200px;
+  background-color: var(--sec);
+}
+.session {
+  position: absolute;
+  top: 10%;
+  font-size: 1.5rem;
+
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.session h1 {
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 20px;
+}
+.pomo h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.timerbtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.start,
+.pause,
+.reset {
+  border-radius: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  background-color: var(--four);
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <nav>
+        <h2>Productivity Dashboard</h2>
+      </nav>
+       <header>
+                <div class="header1">
+                    <h2>20 April 2025</h2>
+                    <h1>Saturday, 1:00 pm</h1>
+                    <h4>Bhopal (MP)</h4>
+                </div>
+
+                <div class="header2">
+                    <h2>20°C</h2>
+                    <h4>Feels like: 23</h4>
+                    <h3 class="precipitation">Precipitation: 35%</h3>
+                    <h3 class="humidity">Humidity: 49%</h3>
+                    <h3 class="wind">Wind: 10 km/h</h3>
+                    
+                </div>
+            </header>
+      <section class="cards">
+        <div class="first elem" id="0">
+          <img src="/0b1904582eff2b18181723544b7add31.jpg" alt="" />
+          <h1>ToDo list</h1>
+        </div>
+        <div class="second elem" id="1">
+          <img src="/431e1e96e3007193ea79949633126ce9.jpg" alt="" />
+          <h1>motivation</h1>
+        </div>
+        <div class="third elem" id="2">
+          <img src="/ead0e25c70c1f2ea239a77f4417b6959.jpg" alt="" />
+          <h1>Pomodoro Timer</h1>
+        </div>
+        <!-- <div class="forth elem" id="3">
+          <img src="/c174b29635ff40f36e9a2229b49f982e.jpg" alt="" />
+          <h1>Daily goals</h1>
+        </div> -->
+        <div class="forth elem" id="4">
+          <img src="/0d39f2e1ff432bf19d31cccf9ce82766.jpg" alt="" />
+          <h1>Daily planner</h1>
+        </div>
+      </section>
+      <section class="fullelem todo-list">
+        <div class="uppertask">
+          <button class="close" id="0">X</button>
+          <h1>All your task list</h1>
+        </div>
+        <div class="taskcontainer">
+          <form class="addtask">
+            <input type="text" placeholder="enter you task" id="input" />
+            <textarea name="" id="details">Enter details</textarea>
+            <div class="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <label for="checkbox">Mark As Important</label>
+            </div>
+            <button>Submit</button>
+          </form>
+          <div class="alltasks">
+            <div class="task">
+              <h2>Study</h2>
+              <button class="taskcompleted">Task completed</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fullelem motivation">
+        <button class="close" id="1">X</button>
+        <div class="uppertask">
+          <h2>Quote of the day</h2>
+        </div>
+        <div class="allquotes">
+          <div class="quotes">
+            <div class="mainquote">
+              <h2>Loading quote...</h2>
+            </div>
+            <div class="author">
+              <h3>...</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="fullelem pomo">
+        <button class="close" id="2">X</button>
+        <h1>Pomodoro Timer</h1>
+        <div class="pomodoro">
+          <div class="session">
+            <h1>work time</h1>
+          </div>
+          <div class="timer">
+            <h2>25:20</h2>
+          </div>
+          <div class="timerbtn">
+            <div class="start">
+              <h2>start</h2>
+            </div>
+            <div class="pause">
+              <h2>pause</h2>
+            </div>
+            <div class="reset">
+              <h2>reset</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="fullelem daily-goals">
+        <button class="close" id="3">X</button>
+        <h1>Daily goals</h1>
+      </section> -->
+      <section class="fullelem daily-planner">
+        <div class="uppertask">
+          <button class="close" id="3">X</button>
+          <h1>Your daily Planner</h1>
+        </div>
+        <div class="planner"></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
