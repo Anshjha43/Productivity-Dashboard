@@ -144,23 +144,22 @@ function motivation() {
   let author = document.querySelector(".author");
 
   async function motivation() {
-   try{
-    let api = await fetch(
-      `https://motivational-spark-api.vercel.app/api/quotes/random`,
-    );
-    let realdata = await api.json();
+    try {
+      let api = await fetch(
+        `https://motivational-spark-api.vercel.app/api/quotes/random`,
+      );
+      if (!api.ok) {
+        throw new Error("Unable to fetch data");
+      }
 
-    author.textContent = realdata.author;
-    quote.innerHTML = realdata.quote;
-    console.log(realdata.author);
+      let realdata = await api.json();
 
-    if(!api.Response.ok){
-      throw new error("Unable to Fetch data")
+      author.textContent = realdata.author;
+      quote.innerHTML = realdata.quote;
+      console.log(realdata.author);
+    } catch (err) {
+      console.log(err);
     }
-
-  }catch(err){
-      console.log(err)
-    } 
   }
 
   motivation();
@@ -207,7 +206,7 @@ function pomodoro() {
 
   function reset() {
     pause();
-    isWork = true;
+    iswork = true;
     time = 25 * 60;
     session.textContent = "Work Session";
     session.style.backgroundColor = "var(--green)";
@@ -248,25 +247,24 @@ function weatherfunctionality() {
   let apikey = `7e13e8dfa9134a46bb4131356260503`;
   let city = `Bhopal`;
   async function weather() {
-try{
-    let api = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`,
-    );
-    let data = await api.json();
-    console.log(data);
+    try {
+      let api = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`,
+      );
 
-    header2Temp.innerHTML = `${data.current.temp_c}°C`;
-    humidity.innerHTML = `Humidity:${data.current.humidity}%`;
-    header2feel.innerHTML = `Feels like:${data.current.feelslike_c}°C`;
-    precipitation.innerHTML = `Precipitation:${data.current.precip_in}%`;
-    wind.innerHTML = `Wind:${data.current.gust_kph}km/h`;
+      if (!api.ok) {
+        throw new Error("Unable to fetch data");
+      }
+      let data = await api.json();
+      console.log(data);
 
-    if(!api.Response.ok){
-      throw new error("Unable to Fetch data")
-    }
-
-    }catch(err){
-       console.log(err);
+      header2Temp.innerHTML = `${data.current.temp_c}°C`;
+      humidity.innerHTML = `Humidity:${data.current.humidity}%`;
+      header2feel.innerHTML = `Feels like:${data.current.feelslike_c}°C`;
+      precipitation.innerHTML = `Precipitation:${data.current.precip_in}%`;
+      wind.innerHTML = `Wind:${data.current.gust_kph}km/h`;
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -306,14 +304,11 @@ try{
   hour = hour % 12;
   hour = hour ? hour : 12;
 
-  String(minuts).padStart(2, "0");
- 
+  minuts = String(minuts).padStart(2, "0");
 
-  header1Date.innerHTML = String(Datee).padStart(2, "0");
+  header1Date.innerHTML = `${String(Datee).padStart(2, "0")},${months[date.getMonth()]} ${date.getFullYear()}`;
   header1Time.innerHTML = `${day}, ${hour}:${minuts} ${AMPM}`;
 
-  setInterval(() => {
-    weatherfunctionality();
-  }, 1000 * 60);
+ setInterval(weather, 60000);
 }
 weatherfunctionality();
