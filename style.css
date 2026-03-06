@@ -1,10 +1,10 @@
 @font-face {
   font-family: regular;
-  src: url(font/WFVisualSans-RegularText-46461986901f80620e484e70aa8cbb90ede25a01351d464819a4e47a3f38ea43.woff2);
+  src: url(font/font1.woff2);
 }
 @font-face {
   font-family: semibold;
-  src: url(font/WFVisualSans-SemiBold-aa0e55353b6a1b897f76a0fcbf5561fa243ce1b8b9f6aebcb5a186f0536713b1.woff2);
+  src: url(font/font2.woff2);
 }
 * {
   margin: 0;
