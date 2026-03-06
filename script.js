@@ -144,6 +144,7 @@ function motivation() {
   let author = document.querySelector(".author");
 
   async function motivation() {
+   try{
     let api = await fetch(
       `https://motivational-spark-api.vercel.app/api/quotes/random`,
     );
@@ -152,6 +153,14 @@ function motivation() {
     author.textContent = realdata.author;
     quote.innerHTML = realdata.quote;
     console.log(realdata.author);
+
+    if(!api.Response.ok){
+      throw new error("Unable to Fetch data")
+    }
+
+  }catch(err){
+      console.log(err)
+    } 
   }
 
   motivation();
@@ -239,6 +248,7 @@ function weatherfunctionality() {
   let apikey = `7e13e8dfa9134a46bb4131356260503`;
   let city = `Bhopal`;
   async function weather() {
+try{
     let api = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`,
     );
@@ -250,6 +260,14 @@ function weatherfunctionality() {
     header2feel.innerHTML = `Feels like:${data.current.feelslike_c}°C`;
     precipitation.innerHTML = `Precipitation:${data.current.precip_in}%`;
     wind.innerHTML = `Wind:${data.current.gust_kph}km/h`;
+
+    if(!api.Response.ok){
+      throw new error("Unable to Fetch data")
+    }
+
+    }catch(err){
+       console.log(err);
+    }
   }
 
   weather();
@@ -289,7 +307,7 @@ function weatherfunctionality() {
   hour = hour ? hour : 12;
 
   String(minuts).padStart(2, "0");
-  String(hour).padStart(2, "0");
+ 
 
   header1Date.innerHTML = String(Datee).padStart(2, "0");
   header1Time.innerHTML = `${day}, ${hour}:${minuts} ${AMPM}`;
