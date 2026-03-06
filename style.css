@@ -512,3 +512,10 @@ section.cards {
   padding: 20px;
   background-color: var(--four);
 }
+button{
+  transition: all ease 0.5s;
+}
+
+button:active{
+  scale: 0.80;
+}

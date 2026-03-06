@@ -227,81 +227,75 @@ function pomodoro() {
 
 pomodoro();
 
-function weatherfunctionality(){
-  
-var header1Time = document.querySelector(".header1 h1");
-var header1Date = document.querySelector(".header1 h2");
-var header2Temp = document.querySelector(".header2 h2");
-var header2feel = document.querySelector(".header2 h4");
-var precipitation = document.querySelector(".header2 .precipitation");
-var humidity = document.querySelector(".header2 .humidity");
-var wind = document.querySelector(".header2 .wind");
+function weatherfunctionality() {
+  var header1Time = document.querySelector(".header1 h1");
+  var header1Date = document.querySelector(".header1 h2");
+  var header2Temp = document.querySelector(".header2 h2");
+  var header2feel = document.querySelector(".header2 h4");
+  var precipitation = document.querySelector(".header2 .precipitation");
+  var humidity = document.querySelector(".header2 .humidity");
+  var wind = document.querySelector(".header2 .wind");
 
-let apikey = `7e13e8dfa9134a46bb4131356260503`;
-let city = `Bhopal`;
-async function weather() {
-  let api = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`,
-  );
-  let data = await api.json();
-  console.log(data);
+  let apikey = `7e13e8dfa9134a46bb4131356260503`;
+  let city = `Bhopal`;
+  async function weather() {
+    let api = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`,
+    );
+    let data = await api.json();
+    console.log(data);
 
-  header2Temp.innerHTML = `${data.current.temp_c}°C`;
-  humidity.innerHTML = `Humidity:${data.current.humidity}%`;
-  header2feel.innerHTML = `Feels like:${data.current.feelslike_c}°C`;
-  precipitation.innerHTML = `Precipitation:${data.current.precip_in}%`;
-  wind.innerHTML = `Wind:${data.current.gust_kph}km/h`;
+    header2Temp.innerHTML = `${data.current.temp_c}°C`;
+    humidity.innerHTML = `Humidity:${data.current.humidity}%`;
+    header2feel.innerHTML = `Feels like:${data.current.feelslike_c}°C`;
+    precipitation.innerHTML = `Precipitation:${data.current.precip_in}%`;
+    wind.innerHTML = `Wind:${data.current.gust_kph}km/h`;
+  }
+
+  weather();
+
+  let date = new Date();
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let Datee = date.getDate();
+  let day = days[date.getDay()];
+  let minuts = date.getMinutes();
+  let hour = date.getHours();
+  let AMPM = hour >= 12 ? "PM" : "AM";
+  hour = hour % 12;
+  hour = hour ? hour : 12;
+
+  String(minuts).padStart(2, "0");
+  String(hour).padStart(2, "0");
+
+  header1Date.innerHTML = String(Datee).padStart(2, "0");
+  header1Time.innerHTML = `${day}, ${hour}:${minuts} ${AMPM}`;
+
+  setInterval(() => {
+    weatherfunctionality();
+  }, 1000 * 60);
 }
-
-weather();
-
-let date = new Date();
-
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let Datee = date.getDate();
-let day = days[date.getDay()]
-let minuts = date.getMinutes()
-let hour = date.getHours()
-let AMPM = hour >= 12 ? 'PM' : "AM"
-hour = hour % 12;
-hour = hour ? hour : 12;
-
-
-String(minuts).padStart(2,"0")
-String(hour).padStart(2,"0")
-
-
-header1Date.innerHTML = String(Datee).padStart(2, "0");
-header1Time.innerHTML = `${day}, ${hour}:${minuts} ${AMPM}`
-
-setInterval(()=>{
-  weatherfunctionality()
-},1000*60)
-
-}
-weatherfunctionality()
-
-
+weatherfunctionality();
