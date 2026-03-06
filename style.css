@@ -37,6 +37,7 @@ html {
   padding: 20px;
   overflow: hidden;
 }
+
 nav{
   background-color: var(--four);
   width: 100%;
@@ -144,10 +145,14 @@ section.cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
+  overflow: auto;
   height: 80%;
   gap: 20px;
 }
+.taskcontainer::-webkit-scrollbar{
+  display: none;
+}
+
 .todo-list {
   padding: 30px;
 }
@@ -519,3 +524,136 @@ button{
 button:active{
   scale: 0.80;
 }
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  
+
+  header{
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 10px;
+  }
+
+  section.cards{
+    justify-content: center;
+    overflow: auto;
+  }
+
+ 
+
+  .elem{
+    width: 45%;
+  }
+
+  .taskcontainer{
+    flex-direction: column;
+  }
+
+  .addtask{
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .alltasks{
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .plantask{
+    width: 80%;
+  }
+
+  .quotes{
+    width: 100%;
+    height: auto;
+  }
+
+  .mainquote{
+    font-size: 2rem;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  nav{
+    font-size: 1.2rem;
+    height: 60px;
+  }
+
+  header{
+    padding: 10px;
+  }
+
+  .header1{
+    font-size: 1.5rem;
+  }
+
+  .header2{
+    font-size: 1.2rem;
+  }
+
+  .elem{
+    width: 100%;
+    height: 250px;
+  }
+
+  section.cards{
+    gap: 15px;
+  }
+
+  .planner{
+    padding: 20px;
+  }
+
+  .plantask{
+    width: 100%;
+  }
+
+  .timer{
+    width: 250px;
+    height: 150px;
+    font-size: 3rem;
+  }
+
+  .timerbtn{
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .mainquote{
+    font-size: 1.5rem;
+  }
+
+  .author{
+    font-size: 1.2rem;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+
+  body, html{
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .main{
+    height: auto;
+    overflow-y: auto;
+  }
+
+.html,body::-webkit-scrollbar{
+  display: none;
+}
+
+}
+
+
